@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d71cd826-2519-4b25-97dc-de9a9e565b4f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MyFileItPEMainService.xsd" MetadataType="Schema" ID="e1cb397c-80ed-4773-b64e-60b4b48c9a49" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MyFileItPEMainService1.xsd" MetadataType="Schema" ID="10e6dbd5-e83e-418e-80ba-bb2368a1113b" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MyFileItPEMainService2.xsd" MetadataType="Schema" ID="cda7d5e5-db81-4fd3-a5b4-86fff3563a29" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MyFileItPEMainService3.xsd" MetadataType="Schema" ID="aa9a0075-0584-48db-9368-0c4ed953f2e3" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MyFileItPEMainService.disco" MetadataType="Disco" ID="9bd8dc14-d18e-443a-b6c2-f459b611ec83" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?disco" />
+    <MetadataFile FileName="MyFileItPEMainService4.xsd" MetadataType="Schema" ID="f528f866-8fc4-47c8-96f6-58f19caf357f" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd5" />
+    <MetadataFile FileName="MyFileItPEMainService.wsdl" MetadataType="Wsdl" ID="010d6ce0-02b4-44f0-a5ef-c6a507602aba" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?wsdl" />
+    <MetadataFile FileName="MyFileItPEMainService5.xsd" MetadataType="Schema" ID="d17966f3-dbed-4365-8bb2-f80f1efcb834" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MyFileItPEMainService6.xsd" MetadataType="Schema" ID="2ddc54cc-c459-4281-af08-49dec3bbac03" SourceId="1" SourceUrl="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

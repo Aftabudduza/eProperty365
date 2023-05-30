@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46f60bf59ca24c4d8ccd05238ee6ec02" Name="Diagram1">
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.AccountChart" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.AccountType" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.AddIncome" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.BillPayment" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.CAMExpense" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Child" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Cities" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Cities_extended" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Communication" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.communicationPanel" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ContactInformation" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Country" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Dealer_SalesPartner" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Dealer_SalesPartner_DetailsZipCodeCoverage" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.DefaultSpecs" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.EventManagement" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.FinancialTransaction" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Global_WebPage_Setup" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Location" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.MakeBillPayment" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Master" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.MonthlyBatchRentalInvoice" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.OwnerProfile" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.PaymentHistory" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.PaymentInformation" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.PropertyManagerProfile" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RecordABill" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RecordABillDetails" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RecordInvoice" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RecordInvoiceDetails" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RefCountries" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RefStates" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.RelationShip" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentalDocumentListOfRental" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentalDocumentListOfRentalAdd_Step2_Page4_Tenant" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page2_EmergencyContacts" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page2_PeopleStayingUnit" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page2_Vehicles" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page3_GeneralInformation" Width="1.5" PointX="16.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page4_AdditionalDocument" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page4_Signature" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page4_VerityIncome" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_ResidenceHistory" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step4_DocumentList" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step4_Owner_Signature" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step4_Signature" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_App_Step2_AgreementNameOf" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_App_Step2_EmployeeInfo" Width="1.5" PointX="10.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_App_Step2_Reference" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Application_Step1" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialAddTemplate_StepCount" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialCommunication" Width="1.5" PointX="22.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialDocument" Width="1.5" PointX="22.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialMaintainesManagerImage" Width="1.5" PointX="22.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialMaintainesManagerMaster" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialMaintainesManagerPartData" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialMaintainesManagerSchedule" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialMaintainesManagerVandorData" Width="1.5" PointX="4.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialTenantSignIn" Width="1.5" PointX="24.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitEquipment" Width="1.5" PointX="24.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitEquipmentImage" Width="1.5" PointX="20.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitSpecs" Width="1.5" PointX="24.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitSpecsChild" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitWebImage" Width="1.5" PointX="26.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitWebImageChild" Width="1.5" PointX="26.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.ResidentialUnitWebImageVideo" Width="1.5" PointX="26.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Showing_Database" Width="1.5" PointX="14.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.States" Width="1.5" PointX="26.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.SystemInformation" Width="1.5" PointX="26.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.TenantOnlineFee" Width="1.5" PointX="10.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.TenantPaymentHistory" Width="1.5" PointX="22.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.TenantRentalFee" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.TenantRentalFee_Residential" Width="1.5" PointX="28.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.UserProfile" Width="1.5" PointX="6.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.UserType" Width="1.5" PointX="28.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.VendorProfile" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.WorkOrder" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.WorkOrderPartData" Width="1.5" PointX="28.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.XMLOperationStatus" Width="1.5" PointX="28.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.GlobalID" Width="1.5" PointX="28.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EPropertyDB_Owner1Model.Residential_Tenant_Add_Step2_Page2_CreditHistory_New" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <AssociationConnector Association="EPropertyDB_Owner1Model.FK_dbo_Child_dbo_Master_MasterId" ManuallyRouted="false" />
+        <AssociationConnector Association="EPropertyDB_Owner1Model.FK_OwnerProfile_ResidentialUnit" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

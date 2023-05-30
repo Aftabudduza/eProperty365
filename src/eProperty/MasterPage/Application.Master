@@ -1,0 +1,874 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Application.master.cs" Inherits="eProperty.MasterPage.Application" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>EProperty365</title>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0)" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="../Content/bootstrap.css" />
+    <link rel="stylesheet" href="../Content/jquery-ui.css" />
+    <link rel="stylesheet" href="../Content/toastr.css" />
+    <link rel="stylesheet" href="../Content/font-awesome.css" />
+    <link rel="stylesheet" href="../Content/ionicons/ionicons.css" />
+    <link rel="stylesheet" href="../AdminLTE/css/AdminLTE.css" />
+    <link rel="stylesheet" href=".../AdminLTE/css/skins/_all-skins.css" />
+    <link rel="stylesheet" href="../Content/admin.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link type="text/css" href="../scripts/notification/notification.css" rel="stylesheet" />
+    <link href="../scripts/select2/dist/css/select2-bootstrap.css" rel="stylesheet" />
+    <link href="../scripts/select2/dist/css/select2.css" rel="stylesheet" />
+    <link type="text/css" href="../AdminLTE/iCheck/all.css" rel="stylesheet" />
+    <link href="../css/Site.css" rel="stylesheet" />
+    <link href="../AppJs/AdditionalCSS/timepicki.css" rel="stylesheet" />
+
+    <!-- Web Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" >
+        if (window.innerWidth <= 350) {
+
+            google_ad_width = 320;
+            google_ad_height = 50;
+        } else if (window.innerWidth >= 750) {
+
+            google_ad_width = 728;
+            google_ad_height = 90;
+        } else {
+
+            google_ad_width = 468;
+            google_ad_height = 60;
+        }
+    </script>    
+    <style type="text/css">
+        .skin-blue .sidebar-menu .treeview-menu > li > a.active {
+            color: red;
+        }
+
+        .input-validation-error {
+            border: 1px solid #ff0000;
+            background-color: #ffeeee !important;
+        }
+
+        .field-validation-error {
+            color: #ff0000 !important;
+        }
+
+        .nav-tabs-custom {
+            background: none;
+        }
+
+            .nav-tabs-custom > .nav-tabs {
+                border-bottom-color: initial;
+                padding: 0px 0px 0px 18px;
+            }
+
+        .nav > li > a.active {
+            background-color: #98cdfe;
+            color: #ffffff;
+        }
+
+        .nav-tabs-custom > .tab-content {
+            background: none;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            padding: 10px 10px 10px 5px;
+        }
+
+        .nav-tabs-custom > .nav-tabs > li > a, .nav-tabs-custom > .nav-tabs > li > a:hover {
+            background: #ffffff;
+        }
+
+        .nav-tabs-custom > .nav-tabs > li > a {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+
+        .box-header.with-border {
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .box {
+            position: relative;
+            background: none;
+            border-top: none;
+            margin-bottom: 20px;
+            width: 100%;
+            box-shadow: none;
+            margin-top: 15px;
+        }
+
+
+
+        #addPress {
+            margin-bottom: 20px;
+            float: left;
+        }
+
+        .lblitemname {
+            margin-top: 10px;
+        }
+
+        .bgimg {
+            background-image: url(../../Images/u4_normal.png);
+            background-repeat: no-repeat;
+            padding: 10px 10px 10px 10px;
+            background-color: #98cdfe;
+            border: 1px solid #373737;
+            margin-bottom: 10px;
+        }
+
+        #FeatureName {
+            width: 100%;
+        }
+
+        .btnSaveWebCenter {
+            text-align: center;
+        }
+
+        .input-validation-error {
+            border: 1px solid #ff0000;
+            background-color: #ffeeee !important;
+        }
+
+        .field-validation-error {
+            color: #ff0000 !important;
+        }
+
+        .control-label {
+            float: left;
+        }
+
+        .col-sm-3 {
+            padding-left: 0px;
+        }
+
+        .col-sm-6 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .col-md-12 {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .col-md-6 {
+            padding-left: 0px;
+        }
+
+        .col-md-3 {
+            float: left;
+            padding-left: 10px;
+        }
+
+        label {
+            margin-bottom: 0px;
+        }
+
+        .color-palette {
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+
+        .color-palette-set {
+            margin-bottom: 15px;
+        }
+
+        .color-palette span {
+            display: none;
+            font-size: 12px;
+        }
+
+        .color-palette:hover span {
+            display: block;
+        }
+
+        .color-palette-box h4 {
+            position: absolute;
+            top: 100%;
+            left: 25px;
+            margin-top: -40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            display: block;
+            z-index: 7;
+        }
+
+        .pdfobject-container {
+            height: 500px;
+        }
+
+        .pdfobject {
+            border: 1px solid #666;
+        }
+
+        .content-wrapper {
+            margin-left: 0px;
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+
+        .fixed .content-wrapper, .fixed .right-side {
+            padding-top: 0px;
+        }
+
+        .RentHeader {
+            font-size: 36px;
+            line-height: 36px;
+            font-family: Arial;
+            padding-top: 10px;
+            color: #ff3300;
+            text-align: center;
+        }
+
+        .divRentHeader {
+            float: left;
+            text-align: center;
+            background: #DFE3EE;
+            margin-bottom: 20px;
+        }
+
+        .appointmentHeader {
+            background-color: #3B5998;
+            padding: 5px;
+            font-size: 15px;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-10 {
+                max-width: 85%;
+            }
+
+            .col-md-2 {
+                max-width: 15%;
+            }
+
+                .col-md-2 .pull-left {
+                    width: 100%;
+                }
+        }
+
+        @media (max-width: 420px) {
+            .col-md-10 {
+                max-width: 100%;
+            }
+
+            .col-md-2 {
+                max-width: 100%;
+            }
+
+                .col-md-2 .pull-left {
+                    width: 250px;
+                }
+        }
+    </style>
+    <style type="text/css">
+        .rent_footer {
+            list-style-type: none;
+            text-align: center;
+            margin-bottom: 0px;
+            padding-bottom: 20px;
+        }
+
+            .rent_footer li {
+                display: inline;
+                margin: 10px 25px;
+            }
+
+        .content {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+    </style>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1024px;
+            height: 1050px;
+        }
+
+        .auto-style2 {
+            background-color: #FFFFCC;
+            border: none;
+        }
+
+        /*.auto-style4 {
+            width: 60%;
+            border: none;
+        }*/
+
+        .auto-style5 {
+            font-size: medium;
+            border: none;
+        }
+
+        .auto-style6 {
+            font-size: medium;
+            font-weight: bold;
+            border: none;
+        }
+
+        .auto-style7 {
+            text-align: center;
+            border: none;
+        }
+
+        .auto-style8 {
+            width: 135px;
+            border: none;
+        }
+
+        .auto-style9 {
+            width: 82px;
+            border: none;
+        }
+
+        .auto-style10 {
+            width: 118px;
+            border: none;
+        }
+
+        .auto-style16 {
+            width: 116px;
+            border: none;
+        }
+
+        .auto-style17 {
+            width: 40%;
+            border: none;
+            float: left;
+        }
+
+        .auto-style18 {
+            width: 209px;
+            border: none;
+        }
+
+        .auto-style19 {
+            width: 101px;
+        }
+
+        .auto-style21 {
+            width: 186px;
+            border: none;
+        }
+
+        .auto-style22 {
+            width: 161px;
+            border: none;
+        }
+
+        .auto-style24 {
+            width: 100%;
+            border: none;
+        }
+
+        .auto-style25 {
+            width: 119px;
+            height: 23px;
+            border: none;
+        }
+
+        .auto-style31 {
+            width: 131px;
+            border: none;
+        }
+
+        .auto-style34 {
+            width: 130px;
+            border: none;
+        }
+
+        .auto-style35 {
+            width: 23%;
+            height: 23px;
+            border-style: none;
+            vertical-align: top;
+            float: left;
+        }
+
+        .auto-style36 {
+            width: 22%;
+            height: 23px;
+            vertical-align: top;
+            border-style: none;
+            float: left;
+        }
+
+        .auto-style37 {
+            width: 25%;
+            height: 23px;
+            vertical-align: top;
+            border-style: none;
+            float: left;
+        }
+
+        .auto-style39 {
+            width: 134px;
+            border-style: none;
+            vertical-align: top;
+        }
+
+        .auto-style40 {
+            width: 133px;
+            border: none;
+        }
+
+        .auto-style45 {
+            color: #FF0000;
+            border-left-color: #C0C0C0;
+            border-left-width: medium;
+            border-right-color: #A0A0A0;
+            border-right-width: medium;
+            border-top-color: #C0C0C0;
+            border-top-width: medium;
+            border-bottom-color: #A0A0A0;
+            border-bottom-width: medium;
+            padding: 1px;
+            background-color: #FFFFCC;
+        }
+
+        .auto-style46 {
+            height: 23px;
+            width: 23%;
+            vertical-align: top;
+            border-style: none;
+            float: left;
+        }
+
+        .auto-style47 {
+            width: 100%;
+            vertical-align: top;
+            border-style: none;
+        }
+
+        .auto-style48 {
+            height: 23px;
+            vertical-align: top;
+            border-style: none;
+        }
+
+        .auto-style49 {
+            width: 100%;
+            vertical-align: top;
+            border-style: none;
+        }
+
+        .auto-style50 {
+            width: 100%;
+        }
+
+        .auto-style51 {
+            width: 70px;
+        }
+
+        .auto-style52 {
+            width: 159px;
+        }
+
+        .auto-style53 {
+            width: 49px;
+        }
+
+        .auto-style54 {
+            width: 149px;
+        }
+
+        .auto-style55 {
+            width: 104px;
+        }
+
+        .auto-style56 {
+            width: 319px;
+        }
+    </style>
+
+    <style type="text/css">
+        .u53_normal {
+            background-image: url('/Images/bgApplicationStep.png');
+        }
+
+        .u53_container {
+            position: absolute;
+            left: 24px;
+            top: 15px;
+        }
+
+        #u53_img {
+            width: 123px;
+            height: 122px;
+        }
+
+        .u54 {
+            position: absolute;
+            left: 5px;
+            top: 35px;
+            width: 113px;
+            height: 60px;
+            font-family: Arial;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .u55_normal {
+            background-image: url('/Images/bgApplicationStep.png');
+        }
+
+        .u55_container {
+            position: absolute;
+            left: 185px;
+            top: 18px;
+            /*width: 117px;
+            height: 116px;*/
+        }
+
+        #u55_img {
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            width: 123px;
+            height: 122px;
+        }
+
+        .u56 {
+            position: absolute;
+            left: 2px;
+            top: 30px;
+            width: 113px;
+            height: 60px;
+            font-family: Arial;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .u57_normal {
+            background-image: url('/Images/bgApplicationStep.png');
+        }
+
+        .u57_container {
+            position: absolute;
+            left: 335px;
+            top: 15px;
+        }
+
+        #u57_img {
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            width: 123px;
+            height: 122px;
+        }
+
+        .u58 {
+            position: absolute;
+            left: 2px;
+            top: 35px;
+            width: 113px;
+            height: 16px;
+            font-family: Arial;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .u59_normal {
+            background-image: url('/Images/bgApplicationStep.png');
+        }
+
+        .u59_container {
+            position: absolute;
+            left: 480px;
+            top: 20px;
+        }
+
+        #u59_img {
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            width: 123px;
+            height: 121px;
+        }
+
+        .u60 {
+            position: absolute;
+            left: 2px;
+            top: 20px;
+            width: 113px;
+            height: 75px;
+            font-family: Arial;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .divTopCheckbox {
+            width: 100%;
+            margin-bottom: 20px;
+            float: left;
+        }
+
+        .u54 p, .u56 p, .u58 p, .u60 p {
+            text-align: center;
+            margin: 0px;
+        }
+
+        .table th, .table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+            border-top: none;
+        }
+
+        .table th, .table td {
+            border-top: none;
+        }
+       
+    </style>
+
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini fixed">
+    <form id="form1" runat="server" class="form-horizontal">
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box">
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-body">
+                                    <div class="col-md-12" style="float: left;margin: 10px 0; text-align: center;">
+                                         <h4>World Best Property & Facilities Management Software</h4>
+                                    </div>
+                                    <div class="col-md-12" style="float: left;margin: 20px 0;">
+                                        <div class="col-md-2">
+                                        <img alt="" src="https://www.eproperty365.net/Images/logo.png" class="img img-responsive pull-left" />
+                                         </div>
+                                       <div class="col-md-10 adBoxHeader ad-code-container">
+                                             <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70109"></script>
+                                        </div>
+                                    </div>
+                                    <div class="box-header with-border CommonHeader col-md-12" style="height: 10px; margin-bottom: 10px;">
+                                        <h3 class="box-title">&nbsp;</h3>
+                                    </div>
+                                    <div class="col-md-12">   
+                                        <div class="col-md-7" style="float: left; padding-left: 0px; padding-right: 0px;">
+                                            <div class="auto-style4">
+                                                 <table class="table table-responsive" style="width: 100%" border="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <table border="0" class="" style="z-index: 100; float: left; width: 100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="" style="text-align: center">
+                                                                                <asp:Image ID="Image2" runat="server" ImageUrl="https://www.eproperty365.net/images/App_chk1.png" />
+                                                                            </td>
+                                                                            <td class="" style="text-align: center">
+                                                                                <asp:Image ID="Image3" runat="server" ImageUrl="https://www.eproperty365.net/images/App_chk2.png" />
+                                                                            </td>
+                                                                            <td class="" style="text-align: center">
+                                                                                <asp:Image ID="Image4" runat="server" ImageUrl="https://www.eproperty365.net/images/App_chk3.png" />
+                                                                            </td>
+                                                                            <td class="" style="text-align: center">
+                                                                                <asp:Image ID="Image5" runat="server" ImageUrl="https://www.eproperty365.net/images/App_chk4.png" />
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <table style="width: 100%; margin-top: -40px; float: left;">
+                                                                    <tr>
+                                                                        <td style="text-align: center">
+                                                                            <asp:CheckBox ID="CheckBox1" runat="server" BorderStyle="None" />
+                                                                        </td>
+                                                                        <td style="text-align: center">
+                                                                            <asp:CheckBox ID="CheckBox2" runat="server" />
+                                                                        </td>
+                                                                        <td style="text-align: center">
+                                                                            <asp:CheckBox ID="CheckBox3" runat="server" />
+                                                                        </td>
+                                                                        <td style="text-align: center">
+                                                                            <asp:CheckBox ID="CheckBox4" runat="server" />
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                  
+                                            </div>
+                                            <asp:ContentPlaceHolder ID="InnerContent" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </div>
+                                        <div class="col-md-4 auto-style17">
+                                             <div style="float: left; width: 100%;">
+                                                    <table class="table table-responsive">
+                                                         <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70110"></script>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70111"></script>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70112"></script>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70113"></script>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70114"></script>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style48">
+                                                                <script type="text/javascript" src="https://banneradvertising.adclickmedia.com/cgi-bin/bannerrotate.cgi?sbutcher::70115"></script>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                  
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /.content -->
+                <footer>                
+                <ul class="rent_footer">
+                    <li>
+                <a href="/">
+                    <img src="https://www.eproperty365.net/Images/logo.png" width="100" class="img img-responsive" alt="Logo">
+                </a>
+            </li>
+            <li><a target="_blank" href="https://www.eproperty365.com/aboutus/">About Us</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/elements/propertyowner/">How It Works</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/">Get Started</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/elements/termsandconditions/">Terms & Conditions</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/elements/privacypolicy/">Privacy</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/contact/">Contact</a></li>
+            <li><a target="_blank" href="https://www.eproperty365.com/">Eproperty365</a></li>
+                </ul>
+            </footer>
+            </div>
+            <!-- /.content-wrapper -->
+        </div>
+
+    </form>
+
+    <script type="text/javascript" src="../../scripts/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../../scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="../../scripts/fastclick.js"></script>
+    <script type="text/javascript" src="../../AdminLTE/js/adminlte.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="../../scripts/notification/bootstrap-growl.min.js"></script>
+    <script type="text/javascript" src="../../scripts/notification/notification.js"></script>
+    <script type="text/javascript" src="../../scripts/select2/dist/js/select2.min.js"></script>
+    <script type="text/javascript" src="../../AdminLTE/iCheck/icheck.js"></script>
+    <script type='text/javascript' src="../../AppJs/AdditionalJsFile/timepicki.js"></script>
+   
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.sidebar-menu').tree();
+            $('.active').closest('li.treeview').addClass('active');
+        })
+    </script>
+
+    <style type="text/css">
+        @media (max-width: 1199px) {
+            .col-md-7 {
+                width: 100%;
+            }
+
+            .col-md-4 {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .col-md-7 {
+                width: 60%;
+            }
+
+            .col-md-4 {
+                width: 40%;
+            }
+        }
+    </style>
+
+     <!--Start of Tawk.to Script-->
+
+    <script type="text/javascript">
+
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+        (function () {
+
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+
+            s1.async = true;
+
+            s1.src = 'https://embed.tawk.to/5ccb0b9ad07d7e0c63919cbc/default';
+
+            s1.charset = 'UTF-8';
+
+            s1.setAttribute('crossorigin', '*');
+
+            s0.parentNode.insertBefore(s1, s0);
+
+        })();
+
+    </script>
+
+    <!--End of Tawk.to Script-->
+
+</body>
+</html>
+
+

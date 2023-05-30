@@ -1,0 +1,1836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyFileItPEMainService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IMyFileItPEMainService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MyFileItService.DTOs" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MyFileItPEService.DTOs" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FileItService.DTOs" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyFileItPEMainService_InitService_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitService" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_InitService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferenceData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferenceData" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferenceData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferenceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetDocumentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetDocumentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddDocumentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocumentType" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddDocumentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocumentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateDocumentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentType" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateDocumentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserOrganizations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserOrganizations" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserOrganizations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserOrganizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetOrganizations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizations" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetOrganizations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UploadFileCabinetDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileCabinetDocument" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UploadFileCabinetDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileCabinetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddEmergencyShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmergencyShare" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddEmergencyShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmergencyShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateDocumentsToTeamEventDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateDocumentsToTeamEventDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateDocumentsToTeamEventDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateDocumentsToTeamEventDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ResendAssociatedDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResendAssociatedDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ResendAssociatedDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResendAssociatedDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateDocumentToTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateDocumentToTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateDocumentToTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateDocumentToTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventsByAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventsByAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventsByAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventsByAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventsByCoach_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventsByCoach" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventsByCoach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventsByCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEvents" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ValidateTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ValidateTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_CheckAppUserExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAppUserExists" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_CheckAppUserExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAppUserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsers" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAllAppUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAppUsers" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAllAppUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAppUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByPhoneNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByPhoneNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByNameSexEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByNameSexEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUsersByNameSexEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUsersByNameSexEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachMembers" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateAppUserToOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateAppUserToOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateAppUserToOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateAppUserToOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveAppUserFromOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAppUserFromOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveAppUserFromOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAppUserFromOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateAppUserStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppUserStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateAppUserStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppUserStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetFamilyUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFamilyUsers" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetFamilyUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFamilyUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSingleDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleDocument" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSingleDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsList" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsListNoImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsListNoImages" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsListNoImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsListNoImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsThumbs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsThumbs" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocumentsThumbs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsThumbsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetFamilyDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFamilyDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetFamilyDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFamilyDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_DeleteAppUserDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppUserDocument" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_DeleteAppUserDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppUserDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetInvitationToShareEmailText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvitationToShareEmailText" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetInvitationToShareEmailText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvitationToShareEmailTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendInvitationEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendInvitationEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendInvitationEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendInvitationEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSentEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSentEmails" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSentEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSentEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendReminderEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendReminderEmails" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendReminderEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendReminderEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserTeamEventDocumentsByTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserTeamEventDocumentsByTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAppUserTeamEventDocumentsByTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserTeamEventDocumentsByTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventPlayerRosters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventPlayerRosters" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetTeamEventPlayerRosters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamEventPlayerRostersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddTeamEventPlayerRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamEventPlayerRoster" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddTeamEventPlayerRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamEventPlayerRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateTeamEventPlayerRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeamEventPlayerRoster" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateTeamEventPlayerRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeamEventPlayerRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveTeamEventPlayerRoster_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTeamEventPlayerRoster" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveTeamEventPlayerRoster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTeamEventPlayerRosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSalesReps_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesReps" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetSalesReps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesRepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginSalesRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSalesRep" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginSalesRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSalesRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddSalesRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSalesRep" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddSalesRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSalesRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateSalesRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalesRep" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateSalesRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalesRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ChangeSalesRepStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSalesRepStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_ChangeSalesRepStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSalesRepStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveSalesRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSalesRep" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveSalesRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSalesRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoaches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoaches" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoaches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachesByOrganizationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachesByOrganizationId" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachesByOrganizationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachesByOrganizationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachesByTeamEventId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachesByTeamEventId" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCoachesByTeamEventId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoachesByTeamEventIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddCoach_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCoach" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddCoach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendAddCoachEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAddCoachEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_SendAddCoachEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAddCoachEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoach_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoach" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateCoachToTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateCoachToTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateCoachToTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateCoachToTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoachFromTeamEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoachFromTeamEvent" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoachFromTeamEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoachFromTeamEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoachFromCurrentAppUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoachFromCurrentAppUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_RemoveCoachFromCurrentAppUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCoachFromCurrentAppUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKey" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyImage" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyImageOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyImageOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddShareKeyImageOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShareKeyImageOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateShareKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShareKey" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateShareKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShareKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateShareKeyToUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateShareKeyToUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AssociateShareKeyToUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateShareKeyToUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetShareKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShareKeys" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetShareKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShareKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAvailableShareKeysByPromoCodeAndPrimaryUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableShareKeysByPromoCodeAndPrimaryUser" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetAvailableShareKeysByPromoCodeAndPrimaryUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableShareKeysByPromoCodeAndPrimaryUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddPaymentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentHistory" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddPaymentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetPaymentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentHistory" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetPaymentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCabinets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabinets" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCabinets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabinetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCabinet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabinet" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetCabinet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabinetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UploadDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UploadDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferrals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferrals" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferrals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferral_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferral" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferralByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetReferralByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddReferral_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddReferral" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddReferral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddReferralResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateReferral_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReferral" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateReferral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReferralResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginReferral_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginReferral" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_LoginReferral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginReferralResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddReferralTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddReferralTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_AddReferralTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddReferralTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateReferralCommissionPaid_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReferralCommissionPaid" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_UpdateReferralCommissionPaid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReferralCommissionPaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_CheckReferralCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckReferralCode" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_CheckReferralCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckReferralCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetEventPlayerStatusReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPlayerStatusReport" />
+  </wsdl:message>
+  <wsdl:message name="IMyFileItPEMainService_GetEventPlayerStatusReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPlayerStatusReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMyFileItPEMainService">
+    <wsdl:operation name="InitService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/InitService" message="tns:IMyFileItPEMainService_InitService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/InitServiceResponse" message="tns:IMyFileItPEMainService_InitService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferenceData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferenceData" message="tns:IMyFileItPEMainService_GetReferenceData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferenceDataResponse" message="tns:IMyFileItPEMainService_GetReferenceData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetDocumentTypes" message="tns:IMyFileItPEMainService_GetDocumentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetDocumentTypesResponse" message="tns:IMyFileItPEMainService_GetDocumentTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDocumentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddDocumentType" message="tns:IMyFileItPEMainService_AddDocumentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddDocumentTypeResponse" message="tns:IMyFileItPEMainService_AddDocumentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateDocumentType" message="tns:IMyFileItPEMainService_UpdateDocumentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateDocumentTypeResponse" message="tns:IMyFileItPEMainService_UpdateDocumentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserOrganizations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserOrganizations" message="tns:IMyFileItPEMainService_GetAppUserOrganizations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserOrganizationsResponse" message="tns:IMyFileItPEMainService_GetAppUserOrganizations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetOrganizations" message="tns:IMyFileItPEMainService_GetOrganizations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetOrganizationsResponse" message="tns:IMyFileItPEMainService_GetOrganizations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddOrganization" message="tns:IMyFileItPEMainService_AddOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddOrganizationResponse" message="tns:IMyFileItPEMainService_AddOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateOrganization" message="tns:IMyFileItPEMainService_UpdateOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateOrganizationResponse" message="tns:IMyFileItPEMainService_UpdateOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveOrganization" message="tns:IMyFileItPEMainService_RemoveOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveOrganizationResponse" message="tns:IMyFileItPEMainService_RemoveOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileCabinetDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UploadFileCabinetDocument" message="tns:IMyFileItPEMainService_UploadFileCabinetDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UploadFileCabinetDocumentResponse" message="tns:IMyFileItPEMainService_UploadFileCabinetDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmergencyShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddEmergencyShare" message="tns:IMyFileItPEMainService_AddEmergencyShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddEmergencyShareResponse" message="tns:IMyFileItPEMainService_AddEmergencyShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateDocumentsToTeamEventDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentsToTeamEventDocuments" message="tns:IMyFileItPEMainService_AssociateDocumentsToTeamEventDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentsToTeamEventDocumentsResponse" message="tns:IMyFileItPEMainService_AssociateDocumentsToTeamEventDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendAssociatedDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ResendAssociatedDocuments" message="tns:IMyFileItPEMainService_ResendAssociatedDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ResendAssociatedDocumentsResponse" message="tns:IMyFileItPEMainService_ResendAssociatedDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateDocumentToTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentToTeamEvent" message="tns:IMyFileItPEMainService_AssociateDocumentToTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentToTeamEventResponse" message="tns:IMyFileItPEMainService_AssociateDocumentToTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventsByAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByAppUser" message="tns:IMyFileItPEMainService_GetTeamEventsByAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByAppUserResponse" message="tns:IMyFileItPEMainService_GetTeamEventsByAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventsByCoach">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByCoach" message="tns:IMyFileItPEMainService_GetTeamEventsByCoach_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByCoachResponse" message="tns:IMyFileItPEMainService_GetTeamEventsByCoach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEvents" message="tns:IMyFileItPEMainService_GetTeamEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsResponse" message="tns:IMyFileItPEMainService_GetTeamEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ValidateTeamEvent" message="tns:IMyFileItPEMainService_ValidateTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ValidateTeamEventResponse" message="tns:IMyFileItPEMainService_ValidateTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddTeamEvent" message="tns:IMyFileItPEMainService_AddTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddTeamEventResponse" message="tns:IMyFileItPEMainService_AddTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEvent" message="tns:IMyFileItPEMainService_UpdateTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEventResponse" message="tns:IMyFileItPEMainService_UpdateTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEvent" message="tns:IMyFileItPEMainService_RemoveTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEventResponse" message="tns:IMyFileItPEMainService_RemoveTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAppUserExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/CheckAppUserExists" message="tns:IMyFileItPEMainService_CheckAppUserExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/CheckAppUserExistsResponse" message="tns:IMyFileItPEMainService_CheckAppUserExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginAppUser" message="tns:IMyFileItPEMainService_LoginAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginAppUserResponse" message="tns:IMyFileItPEMainService_LoginAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ForgotPassword" message="tns:IMyFileItPEMainService_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ForgotPasswordResponse" message="tns:IMyFileItPEMainService_ForgotPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsers" message="tns:IMyFileItPEMainService_GetAppUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersResponse" message="tns:IMyFileItPEMainService_GetAppUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAppUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAllAppUsers" message="tns:IMyFileItPEMainService_GetAllAppUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAllAppUsersResponse" message="tns:IMyFileItPEMainService_GetAllAppUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByEmail" message="tns:IMyFileItPEMainService_GetAppUsersByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByEmailResponse" message="tns:IMyFileItPEMainService_GetAppUsersByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByPhoneNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByPhoneNumber" message="tns:IMyFileItPEMainService_GetAppUsersByPhoneNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByPhoneNumberResponse" message="tns:IMyFileItPEMainService_GetAppUsersByPhoneNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByNameSexEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByNameSexEmail" message="tns:IMyFileItPEMainService_GetAppUsersByNameSexEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByNameSexEmailResponse" message="tns:IMyFileItPEMainService_GetAppUsersByNameSexEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachMembers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachMembers" message="tns:IMyFileItPEMainService_GetCoachMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachMembersResponse" message="tns:IMyFileItPEMainService_GetCoachMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddAppUser" message="tns:IMyFileItPEMainService_AddAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddAppUserResponse" message="tns:IMyFileItPEMainService_AddAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateAppUserToOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateAppUserToOrganization" message="tns:IMyFileItPEMainService_AssociateAppUserToOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateAppUserToOrganizationResponse" message="tns:IMyFileItPEMainService_AssociateAppUserToOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppUserFromOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveAppUserFromOrganization" message="tns:IMyFileItPEMainService_RemoveAppUserFromOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveAppUserFromOrganizationResponse" message="tns:IMyFileItPEMainService_RemoveAppUserFromOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateAppUser" message="tns:IMyFileItPEMainService_UpdateAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateAppUserResponse" message="tns:IMyFileItPEMainService_UpdateAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveAppUser" message="tns:IMyFileItPEMainService_RemoveAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveAppUserResponse" message="tns:IMyFileItPEMainService_RemoveAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppUserStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateAppUserStatus" message="tns:IMyFileItPEMainService_UpdateAppUserStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateAppUserStatusResponse" message="tns:IMyFileItPEMainService_UpdateAppUserStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetFamilyUsers" message="tns:IMyFileItPEMainService_GetFamilyUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetFamilyUsersResponse" message="tns:IMyFileItPEMainService_GetFamilyUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSingleDocument" message="tns:IMyFileItPEMainService_GetSingleDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSingleDocumentResponse" message="tns:IMyFileItPEMainService_GetSingleDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsList" message="tns:IMyFileItPEMainService_GetAppUserDocumentsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsListResponse" message="tns:IMyFileItPEMainService_GetAppUserDocumentsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsListNoImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsListNoImages" message="tns:IMyFileItPEMainService_GetAppUserDocumentsListNoImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsListNoImagesResponse" message="tns:IMyFileItPEMainService_GetAppUserDocumentsListNoImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsThumbs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsThumbs" message="tns:IMyFileItPEMainService_GetAppUserDocumentsThumbs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsThumbsResponse" message="tns:IMyFileItPEMainService_GetAppUserDocumentsThumbs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocuments" message="tns:IMyFileItPEMainService_GetAppUserDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsResponse" message="tns:IMyFileItPEMainService_GetAppUserDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetFamilyDocuments" message="tns:IMyFileItPEMainService_GetFamilyDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetFamilyDocumentsResponse" message="tns:IMyFileItPEMainService_GetFamilyDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppUserDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/DeleteAppUserDocument" message="tns:IMyFileItPEMainService_DeleteAppUserDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/DeleteAppUserDocumentResponse" message="tns:IMyFileItPEMainService_DeleteAppUserDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitationToShareEmailText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetInvitationToShareEmailText" message="tns:IMyFileItPEMainService_GetInvitationToShareEmailText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetInvitationToShareEmailTextResponse" message="tns:IMyFileItPEMainService_GetInvitationToShareEmailText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitationEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendInvitationEmail" message="tns:IMyFileItPEMainService_SendInvitationEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendInvitationEmailResponse" message="tns:IMyFileItPEMainService_SendInvitationEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSentEmails" message="tns:IMyFileItPEMainService_GetSentEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSentEmailsResponse" message="tns:IMyFileItPEMainService_GetSentEmails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendReminderEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendReminderEmails" message="tns:IMyFileItPEMainService_SendReminderEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendReminderEmailsResponse" message="tns:IMyFileItPEMainService_SendReminderEmails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserTeamEventDocumentsByTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserTeamEventDocumentsByTeamEvent" message="tns:IMyFileItPEMainService_GetAppUserTeamEventDocumentsByTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAppUserTeamEventDocumentsByTeamEventResponse" message="tns:IMyFileItPEMainService_GetAppUserTeamEventDocumentsByTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventPlayerRosters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventPlayerRosters" message="tns:IMyFileItPEMainService_GetTeamEventPlayerRosters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetTeamEventPlayerRostersResponse" message="tns:IMyFileItPEMainService_GetTeamEventPlayerRosters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamEventPlayerRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddTeamEventPlayerRoster" message="tns:IMyFileItPEMainService_AddTeamEventPlayerRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddTeamEventPlayerRosterResponse" message="tns:IMyFileItPEMainService_AddTeamEventPlayerRoster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeamEventPlayerRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEventPlayerRoster" message="tns:IMyFileItPEMainService_UpdateTeamEventPlayerRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEventPlayerRosterResponse" message="tns:IMyFileItPEMainService_UpdateTeamEventPlayerRoster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTeamEventPlayerRoster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEventPlayerRoster" message="tns:IMyFileItPEMainService_RemoveTeamEventPlayerRoster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEventPlayerRosterResponse" message="tns:IMyFileItPEMainService_RemoveTeamEventPlayerRoster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSalesReps" message="tns:IMyFileItPEMainService_GetSalesReps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetSalesRepsResponse" message="tns:IMyFileItPEMainService_GetSalesReps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSalesRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginSalesRep" message="tns:IMyFileItPEMainService_LoginSalesRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginSalesRepResponse" message="tns:IMyFileItPEMainService_LoginSalesRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSalesRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddSalesRep" message="tns:IMyFileItPEMainService_AddSalesRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddSalesRepResponse" message="tns:IMyFileItPEMainService_AddSalesRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateSalesRep" message="tns:IMyFileItPEMainService_UpdateSalesRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateSalesRepResponse" message="tns:IMyFileItPEMainService_UpdateSalesRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSalesRepStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ChangeSalesRepStatus" message="tns:IMyFileItPEMainService_ChangeSalesRepStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/ChangeSalesRepStatusResponse" message="tns:IMyFileItPEMainService_ChangeSalesRepStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSalesRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveSalesRep" message="tns:IMyFileItPEMainService_RemoveSalesRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveSalesRepResponse" message="tns:IMyFileItPEMainService_RemoveSalesRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoaches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoaches" message="tns:IMyFileItPEMainService_GetCoaches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachesResponse" message="tns:IMyFileItPEMainService_GetCoaches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachesByOrganizationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachesByOrganizationId" message="tns:IMyFileItPEMainService_GetCoachesByOrganizationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachesByOrganizationIdResponse" message="tns:IMyFileItPEMainService_GetCoachesByOrganizationId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachesByTeamEventId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachesByTeamEventId" message="tns:IMyFileItPEMainService_GetCoachesByTeamEventId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCoachesByTeamEventIdResponse" message="tns:IMyFileItPEMainService_GetCoachesByTeamEventId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCoach">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddCoach" message="tns:IMyFileItPEMainService_AddCoach_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddCoachResponse" message="tns:IMyFileItPEMainService_AddCoach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAddCoachEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendAddCoachEmail" message="tns:IMyFileItPEMainService_SendAddCoachEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/SendAddCoachEmailResponse" message="tns:IMyFileItPEMainService_SendAddCoachEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoach">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoach" message="tns:IMyFileItPEMainService_RemoveCoach_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoachResponse" message="tns:IMyFileItPEMainService_RemoveCoach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateCoachToTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateCoachToTeamEvent" message="tns:IMyFileItPEMainService_AssociateCoachToTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateCoachToTeamEventResponse" message="tns:IMyFileItPEMainService_AssociateCoachToTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoachFromTeamEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromTeamEvent" message="tns:IMyFileItPEMainService_RemoveCoachFromTeamEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromTeamEventResponse" message="tns:IMyFileItPEMainService_RemoveCoachFromTeamEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoachFromCurrentAppUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromCurrentAppUser" message="tns:IMyFileItPEMainService_RemoveCoachFromCurrentAppUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromCurrentAppUserResponse" message="tns:IMyFileItPEMainService_RemoveCoachFromCurrentAppUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKey" message="tns:IMyFileItPEMainService_AddShareKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyResponse" message="tns:IMyFileItPEMainService_AddShareKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImage" message="tns:IMyFileItPEMainService_AddShareKeyImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImageResponse" message="tns:IMyFileItPEMainService_AddShareKeyImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyOrganization" message="tns:IMyFileItPEMainService_AddShareKeyOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyOrganizationResponse" message="tns:IMyFileItPEMainService_AddShareKeyOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyImageOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImageOrganization" message="tns:IMyFileItPEMainService_AddShareKeyImageOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImageOrganizationResponse" message="tns:IMyFileItPEMainService_AddShareKeyImageOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShareKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateShareKey" message="tns:IMyFileItPEMainService_UpdateShareKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateShareKeyResponse" message="tns:IMyFileItPEMainService_UpdateShareKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateShareKeyToUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateShareKeyToUser" message="tns:IMyFileItPEMainService_AssociateShareKeyToUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AssociateShareKeyToUserResponse" message="tns:IMyFileItPEMainService_AssociateShareKeyToUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShareKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetShareKeys" message="tns:IMyFileItPEMainService_GetShareKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetShareKeysResponse" message="tns:IMyFileItPEMainService_GetShareKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableShareKeysByPromoCodeAndPrimaryUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAvailableShareKeysByPromoCodeAndPrimaryUser" message="tns:IMyFileItPEMainService_GetAvailableShareKeysByPromoCodeAndPrimaryUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetAvailableShareKeysByPromoCodeAndPrimaryUserResponse" message="tns:IMyFileItPEMainService_GetAvailableShareKeysByPromoCodeAndPrimaryUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddPaymentHistory" message="tns:IMyFileItPEMainService_AddPaymentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddPaymentHistoryResponse" message="tns:IMyFileItPEMainService_AddPaymentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetPaymentHistory" message="tns:IMyFileItPEMainService_GetPaymentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetPaymentHistoryResponse" message="tns:IMyFileItPEMainService_GetPaymentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/Authenticate" message="tns:IMyFileItPEMainService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AuthenticateResponse" message="tns:IMyFileItPEMainService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCabinets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCabinets" message="tns:IMyFileItPEMainService_GetCabinets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCabinetsResponse" message="tns:IMyFileItPEMainService_GetCabinets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCabinet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCabinet" message="tns:IMyFileItPEMainService_GetCabinet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetCabinetResponse" message="tns:IMyFileItPEMainService_GetCabinet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetDocuments" message="tns:IMyFileItPEMainService_GetDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetDocumentsResponse" message="tns:IMyFileItPEMainService_GetDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UploadDocuments" message="tns:IMyFileItPEMainService_UploadDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UploadDocumentsResponse" message="tns:IMyFileItPEMainService_UploadDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferrals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferrals" message="tns:IMyFileItPEMainService_GetReferrals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferralsResponse" message="tns:IMyFileItPEMainService_GetReferrals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferral">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferral" message="tns:IMyFileItPEMainService_GetReferral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferralResponse" message="tns:IMyFileItPEMainService_GetReferral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferralByEmail" message="tns:IMyFileItPEMainService_GetReferralByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetReferralByEmailResponse" message="tns:IMyFileItPEMainService_GetReferralByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReferral">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddReferral" message="tns:IMyFileItPEMainService_AddReferral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddReferralResponse" message="tns:IMyFileItPEMainService_AddReferral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReferral">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateReferral" message="tns:IMyFileItPEMainService_UpdateReferral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateReferralResponse" message="tns:IMyFileItPEMainService_UpdateReferral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginReferral">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginReferral" message="tns:IMyFileItPEMainService_LoginReferral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/LoginReferralResponse" message="tns:IMyFileItPEMainService_LoginReferral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReferralTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddReferralTransaction" message="tns:IMyFileItPEMainService_AddReferralTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/AddReferralTransactionResponse" message="tns:IMyFileItPEMainService_AddReferralTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReferralCommissionPaid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateReferralCommissionPaid" message="tns:IMyFileItPEMainService_UpdateReferralCommissionPaid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/UpdateReferralCommissionPaidResponse" message="tns:IMyFileItPEMainService_UpdateReferralCommissionPaid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckReferralCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/CheckReferralCode" message="tns:IMyFileItPEMainService_CheckReferralCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/CheckReferralCodeResponse" message="tns:IMyFileItPEMainService_CheckReferralCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventPlayerStatusReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetEventPlayerStatusReport" message="tns:IMyFileItPEMainService_GetEventPlayerStatusReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyFileItPEMainService/GetEventPlayerStatusReportResponse" message="tns:IMyFileItPEMainService_GetEventPlayerStatusReport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMyFileItPEMainService" type="tns:IMyFileItPEMainService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IMyFileItPEMainService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InitService">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/InitService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferenceData">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetReferenceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentTypes">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetDocumentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDocumentType">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddDocumentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentType">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateDocumentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserOrganizations">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserOrganizations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizations">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetOrganizations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileCabinetDocument">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UploadFileCabinetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmergencyShare">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddEmergencyShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateDocumentsToTeamEventDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentsToTeamEventDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendAssociatedDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/ResendAssociatedDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateDocumentToTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AssociateDocumentToTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventsByAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventsByCoach">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetTeamEventsByCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEvents">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetTeamEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/ValidateTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAppUserExists">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/CheckAppUserExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/LoginAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsers">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAppUsers">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAllAppUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByEmail">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByPhoneNumber">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUsersByNameSexEmail">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUsersByNameSexEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachMembers">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCoachMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateAppUserToOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AssociateAppUserToOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppUserFromOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveAppUserFromOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppUserStatus">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateAppUserStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyUsers">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetFamilyUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleDocument">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetSingleDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsList">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsListNoImages">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsListNoImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocumentsThumbs">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocumentsThumbs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFamilyDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetFamilyDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppUserDocument">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/DeleteAppUserDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitationToShareEmailText">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetInvitationToShareEmailText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitationEmail">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/SendInvitationEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentEmails">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetSentEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReminderEmails">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/SendReminderEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserTeamEventDocumentsByTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAppUserTeamEventDocumentsByTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamEventPlayerRosters">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetTeamEventPlayerRosters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamEventPlayerRoster">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddTeamEventPlayerRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeamEventPlayerRoster">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateTeamEventPlayerRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTeamEventPlayerRoster">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveTeamEventPlayerRoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesReps">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetSalesReps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSalesRep">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/LoginSalesRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSalesRep">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddSalesRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesRep">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateSalesRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSalesRepStatus">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/ChangeSalesRepStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSalesRep">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveSalesRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoaches">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCoaches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachesByOrganizationId">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCoachesByOrganizationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoachesByTeamEventId">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCoachesByTeamEventId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCoach">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAddCoachEmail">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/SendAddCoachEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoach">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateCoachToTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AssociateCoachToTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoachFromTeamEvent">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromTeamEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoachFromCurrentAppUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/RemoveCoachFromCurrentAppUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKey">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddShareKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyImage">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddShareKeyOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShareKeyImageOrganization">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddShareKeyImageOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShareKey">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateShareKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateShareKeyToUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AssociateShareKeyToUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShareKeys">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetShareKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableShareKeysByPromoCodeAndPrimaryUser">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetAvailableShareKeysByPromoCodeAndPrimaryUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentHistory">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentHistory">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCabinets">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCabinets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCabinet">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetCabinet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocuments">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UploadDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferrals">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetReferrals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferral">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetReferral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralByEmail">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetReferralByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReferral">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddReferral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReferral">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateReferral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginReferral">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/LoginReferral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReferralTransaction">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/AddReferralTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReferralCommissionPaid">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/UpdateReferralCommissionPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckReferralCode">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/CheckReferralCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventPlayerStatusReport">
+      <soap:operation soapAction="http://tempuri.org/IMyFileItPEMainService/GetEventPlayerStatusReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyFileItPEMainService">
+    <wsdl:port name="BasicHttpBinding_IMyFileItPEMainService" binding="tns:BasicHttpBinding_IMyFileItPEMainService">
+      <soap:address location="https://myfileit.net/MyFileItPEService/MyFileItPEMainService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

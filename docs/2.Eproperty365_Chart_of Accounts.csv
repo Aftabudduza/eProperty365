@@ -1,0 +1,90 @@
+1010,Cash Main,Asset
+1020,Cash Payroll account,Asset
+1030,Pretty Cash,Asset
+1040,Security Deposits,Asset
+1050,Marketable Securites,Asset
+1060,Rent Exchange Holding Account,Asset
+1210,Account Receivable,Asset
+1290,Allowance for Doubtful Accounts,Asset
+1310,Inventory,Asset
+1410,Prepaid Expenses,Asset
+1510,Building,Asset
+1520,Equipment,Asset
+1530,Vehicles,Asset
+1540,Furniture & Fixtues,Asset
+1550,Leasehold Improvements,Asset
+1610,Accoumulated Depreciation,Asset
+1910,Other Assets,Asset
+2110,Account Payable,LIB
+2120,Accured Liabilies,LIB
+2130,Notes Payable,LIB
+2140,Rent Exchange Transfer,LIB
+2210,Wages Payable,LIB
+2220,Commission,LIB
+2230,FICA,LIB
+2240,Unemployment,LIB
+2250,Workmen's Comp,LIB
+2260,Medical Benefits,LIB
+2270,401 K Match,LIB
+2280,401 K Employee Contribution,LIB
+2510,Federal Income Taxes,LIB
+2520,State Incomes Taxes,LIB
+2530,Deffer - FIT Current,LIB
+2540,Deferred - state Income Taxes,LIB
+2710,Long Term Debt,LIB
+2720,Notes Payable,LIB
+2730,Mortage Payable,LIB
+2740,Installment Notes Payable,LIB
+3100,Common Stock,EQU
+3200,Preferred Stock,EQU
+3300,Pain in capital,EQU
+3400,Partners Capital,EQU
+3500,Member Contributions,EQU
+3900,Retained Earning,EQU
+4000,Unit Fee,INC
+4010,Rent,INC
+4012,Less rent returns and allowances,INC
+4020,Exclusive Territoy License Fee,INC
+4030,ET License Renewal Fee,INC
+4040,Late Fee,INC
+4050,Bad Check Fee,INC
+4060,Application Fee,INC
+4070,Credit Check Fee,INC
+4080,Other Income,INC
+4100,Processing Fees,INC
+4200,Ad Revenue National,INC
+4210,Ad Revenue Local,INC
+4220,Commissions,INC
+4600,Interest Income,INC
+4950,Sales Discounts,INC
+5010,Sales Partner Commission,COG
+5020,Dealer Commission,COG
+5030,Dealer Broker Commission,COG
+5040,Bank Processing Fee,COG
+6010,Advertising,EXP
+6020,Amortization,EXP
+6030,Auto,EXP
+6040,Bad Debt ,EXP
+6050,Bank Fee,EXP
+6060,Commissions,EXP
+6070,Depreciation Expense or Depletion,EXP
+6080,Employee Benefits,EXP
+6090,Frieght,EXP
+6100,Gifts,EXP
+6110,Insurance,EXP
+6120,Interest,EXP
+6130,License,EXP
+6140,Maintenance,EXP
+6150,Meals & Entertain,EXP
+6160,Office Supplies,EXP
+6170,Other Expenses,EXP
+6170,Payroll Taxes,EXP
+6180,Printing,EXP
+6190,Postage,EXP
+6200,Processing Fees,EXP
+6210,Rent,EXP
+6220, ledger 6200,EXP
+6230,Salaries,EXP
+6240,Supplies,EXP
+6250,Taxes,EXP
+6260,Utilities,EXP

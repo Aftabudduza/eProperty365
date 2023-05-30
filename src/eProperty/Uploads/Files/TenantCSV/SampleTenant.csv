@@ -1,0 +1,2 @@
+LocationID,UnitID,FirstName,LastName,Email,SecurityDeposit,MonthlyRentHeld,OtherAmountHeld,LeaseSignDate,MonthlyPayDueDate
+L000005,100000000001,ADI,Tenant2,a2@a.com,2000,500,350,3/28/2019,3/28/2019

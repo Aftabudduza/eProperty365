@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CAC60D7-7956-43FF-94E6-2F223CFC9B0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PropertyService</RootNamespace>
+    <AssemblyName>PropertyService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AuthorizeNet">
+      <HintPath>..\Libraries\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Libraries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Libraries\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AccountChart.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\AccountType.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\AddIncome.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\BillPayment.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\CAMExpense.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Child.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Cities.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Cities_extended.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Communication.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\communicationPanel.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ContactInformation.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Country.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Dealer_SalesPartner.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Dealer_SalesPartner_DetailsZipCodeCoverage.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DefaultSpecs.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\EventManagement.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\FinancialTransaction.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GetDealerCommissionRateByUnitId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GetDealerSalesAccounts_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GetEventManagementDashboardTableInfo_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GetOwnerDashboardData_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GetSalesPartnerCommissionRateByUnitId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Get_AddIncomeInitial_Data_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Get_EventManagement_Data_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Get_TenantInformation_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GlobalID.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Global_WebPage_Setup.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Location.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\MakeBillPayment.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Master.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\MonthlyBatchRentalInvoice.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\OwnerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OwnerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\OwnerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\OwnerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OwnerModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\OwnerProfile.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PaymentHistory.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PaymentInformation.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\PropertyManagerProfile.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RecordABill.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RecordABillDetails.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RecordInvoice.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RecordInvoiceDetails.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RefCountries.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RefStates.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\RelationShip.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Report.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentalDocumentListOfRental.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentalDocumentListOfRentalAdd_Step2_Page4_Tenant.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialAddTemplate_StepCount.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialCommunication.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialDocument.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialMaintainesManagerImage.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialMaintainesManagerMaster.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialMaintainesManagerPartData.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialMaintainesManagerSchedule.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialMaintainesManagerVandorData.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialTenantSignIn.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnit.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitEquipment.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitEquipmentImage.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitSpecs.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitSpecsChild.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitWebImage.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitWebImageChild.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ResidentialUnitWebImageVideo.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page2_CreditHistory_New.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page2_EmergencyContacts.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page2_PeopleStayingUnit.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page2_Vehicles.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page3_GeneralInformation.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page4_AdditionalDocument.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page4_Signature.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_Page4_VerityIncome.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step2_ResidenceHistory.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step4_DocumentList.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step4_Owner_Signature.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Add_Step4_Signature.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_Application_Step1.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_App_Step2_AgreementNameOf.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_App_Step2_EmployeeInfo.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Residential_Tenant_App_Step2_Reference.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Showing_Database.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\States.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\SystemInformation.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\TenantOnlineFee.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\TenantPaymentHistory.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\TenantRentalFee.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\TenantRentalFee_Residential.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UserCommission.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UserProfile.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UserType.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\uspGetCommunicationGridData_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetAllTenantDataByTenanrId_ResidentialId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetBalanceSheetData_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetEquipmentListByUnitId_PropertyManager_LocationId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetMessage_Owner_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetMessage_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetOwnerPropertyManagerAndLocationInfo_UnitId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetRecordABillByDate_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetResidentialFeatureSpecs_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetsenderName_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetSerialId_UnitId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantApplication_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantListOfDocumentByUnitId_new_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantListOfDocumentByUnitId_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantListOfDocumentByUnitId_SignDeposit_New_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantListOfDocumentByUnitId_SignDeposit_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\usp_GetTenantProfileInfo_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Usp_GetWebAnalyticsBarChartData_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Usp_GetWebAnalyticsData_Result.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\VendorProfile.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WorkOrder.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\WorkOrderPartData.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BO\XMLOperationStatus.cs">
+      <DependentUpon>OwnerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Account\AddChartofAccountDA.cs" />
+    <Compile Include="DA\Account\FinancialTransactionDA.cs" />
+    <Compile Include="DA\Account\MakeBillPaymentDA.cs" />
+    <Compile Include="DA\Account\MonthlyBatchRentalInvoiceDA.cs" />
+    <Compile Include="DA\Account\RecordABillDA.cs" />
+    <Compile Include="DA\Account\SalesPartnerDealerDashboardDA.cs" />
+    <Compile Include="DA\Account\BillPaymentDA.cs" />
+    <Compile Include="DA\Admin\AddIncomeDA.cs" />
+    <Compile Include="DA\Admin\BaseDA.cs" />
+    <Compile Include="DA\Admin\UserCommissionDA.cs" />
+    <Compile Include="DA\Admin\PaymentHistoryDA.cs" />
+    <Compile Include="DA\Admin\OwnerProfileDA.cs" />
+    <Compile Include="DA\Admin\FinancialTransactionDA.cs" />
+    <Compile Include="DA\Admin\PaymentInformationDA.cs" />
+    <Compile Include="DA\Admin\ResidentialTenent\ResidentialAddResponceTemplateDa.cs" />
+    <Compile Include="DA\Admin\ResidentialTenent\TenantDashboardDA.cs" />
+    <Compile Include="DA\Admin\SystemInformationDA.cs" />
+    <Compile Include="DA\Admin\UserProfileDA.cs" />
+    <Compile Include="DA\ADODBConnection.cs" />
+    <Compile Include="DA\ADONetDataConnection.cs" />
+    <Compile Include="DA\AllDBName.cs" />
+    <Compile Include="DA\BaseDA.cs" />
+    <Compile Include="DA\CommonDA.cs" />
+    <Compile Include="DA\ConvertDataTableToObject.cs" />
+    <Compile Include="DA\ManagementDashboardDA.cs" />
+    <Compile Include="DA\Report\BasicReportDA.cs" />
+    <Compile Include="DA\Report\ReportDA.cs" />
+    <Compile Include="DA\ResidentialUnitDa.cs" />
+    <Compile Include="DA\LocationDA.cs" />
+    <Compile Include="DA\RecordInvoiceDA.cs" />
+    <Compile Include="DA\WorkOrderDA.cs" />
+    <Compile Include="DA\VendorDA.cs" />
+    <Compile Include="DA\ChildDA.cs" />
+    <Compile Include="DA\CAMExpenseDA.cs" />
+    <Compile Include="DA\ContactInformationDA.cs" />
+    <Compile Include="DA\PaymentInformationDA.cs" />
+    <Compile Include="DA\SystemInformationDA.cs" />
+    <Compile Include="DA\PropertyManagerProfileDA.cs" />
+    <Compile Include="DA\StateDA.cs" />
+    <Compile Include="DA\CountryDA.cs" />
+    <Compile Include="DA\MasterDA.cs" />
+    <Compile Include="DA\OwnerProfileDA.cs" />
+    <Compile Include="DA\UserProfileDA.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Configuration\ConfigurationManager.cs" />
+    <Compile Include="Utility\CommonDA.cs" />
+    <Compile Include="Utility\ConvertDataTableToList.cs" />
+    <Compile Include="Utility\ChargeCreditCard.cs" />
+    <Compile Include="Utility\CreditBankAccount.cs" />
+    <Compile Include="Utility\DebitBankAccount.cs" />
+    <Compile Include="Utility\ExpressionBuilder.cs" />
+    <Compile Include="Utility\EPropertyEntities.cs" />
+    <Compile Include="Utility\Gateway.cs" />
+    <Compile Include="Utility\PropertyEntities.cs" />
+    <Compile Include="Utility\Utility.cs" />
+    <Compile Include="ViewModel\AccountModel.cs" />
+    <Compile Include="ViewModel\AgreementNameOfSML.cs" />
+    <Compile Include="ViewModel\CreditInfoEmergencyVehiclePeopleObject.cs" />
+    <Compile Include="ViewModel\Dealer_SalesPartnerModel.cs" />
+    <Compile Include="ViewModel\EmployeementXML.cs" />
+    <Compile Include="ViewModel\LeaseFile.cs" />
+    <Compile Include="ViewModel\MakeBillPaymentModel.cs" />
+    <Compile Include="ViewModel\ManagementDashboardModel.cs" />
+    <Compile Include="ViewModel\MonthlyBatchRentalInvoiceModel.cs" />
+    <Compile Include="ViewModel\PersonalRefXML.cs" />
+    <Compile Include="ViewModel\RecordABillModel.cs" />
+    <Compile Include="ViewModel\ReferenceXML.cs" />
+    <Compile Include="ViewModel\ReportParamModel.cs" />
+    <Compile Include="ViewModel\ResidentialXML.cs" />
+    <Compile Include="ViewModel\TenantCommonModel.cs" />
+    <Compile Include="ViewModel\VmForTenantProfile.cs" />
+    <Compile Include="ViewModel\VmRentalEquipment.cs" />
+    <Compile Include="ViewModel\WebAnalyticsModel.cs" />
+    <Compile Include="ViewModel\XMLStatusResponce.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="BO\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BO\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="BO\OwnerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OwnerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BO\OwnerModel.edmx.diagram">
+      <DependentUpon>OwnerModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BO\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BO\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="BO\OwnerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OwnerModel.edmx</DependentUpon>
+      <LastGenOutput>OwnerModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BO\OwnerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OwnerModel.edmx</DependentUpon>
+      <LastGenOutput>OwnerModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="bin\x86\Debug\" />
+    <Folder Include="bin\x86\Release\" />
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\x86\Debug\" />
+    <Folder Include="obj\x86\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

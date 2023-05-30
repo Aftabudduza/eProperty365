@@ -1,0 +1,17 @@
+-- Asset
+select F.AccountType, F.LedgerCode, max(AC.accountName) accountName, isnull(isnull(sum(Debit), 0) - isnull(sum(Credit), 0), 0) as Total  
+from FinancialTransaction F left join AccountChart AC on F.LedgerCode = Ac.accountCode  
+where F.AccountType = 'Asset' AND CONVERT(DATE,F.CreateDate) <= '1 Jan 2020'
+group by F.AccountType, F.LedgerCode
+union
+-- Income
+select 'Equity' as AccountType,  'Revenue' as LedgerCode, 'Revenue' as AccountName,  isnull(isnull(sum(Credit), 0) - isnull(sum(Debit), 0), 0) as Total  
+from FinancialTransaction F  where F.AccountType = 'Inc' or F.AccountType = 'Exp' or F.AccountType = 'COG' 
+AND CONVERT(DATE,F.CreateDate) <= '1 Jan 2020'
+union 
+--Liability
+select F.AccountType, F.LedgerCode, max(AC.accountName) accountName, isnull(isnull(sum(Credit), 0) - isnull(sum(Debit), 0), 0) as Total  
+from FinancialTransaction F left join AccountChart AC on F.LedgerCode = Ac.accountCode  
+where F.AccountType = 'Lib' AND CONVERT(DATE,F.CreateDate) <= '1 Jan 2020'
+group by F.AccountType, F.LedgerCode
+

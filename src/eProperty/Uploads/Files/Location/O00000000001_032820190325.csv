@@ -1,0 +1,2 @@
+Id,LocationType,Serial,Address,Address1,Region,Country,State,City,Zip,OwnerId,PropertyManagerId,LocationName,SchoolDistract,Longitude,Latitude,Units,Lots,TotalSize,DatePurchased,Cost,SchoolTax,PropertyTax,Comment,IsDelete,IsBackgroundCheck,IsCondoFee,IsRentMonthly,CreatedBy,CreatedDate,UpdatedBy,UpdatedDate,Logo
+1,1,100001,7100 E Valley Green Road,7100 E Valley Green Road,PENNSYLVANIA,US,PA,Fort Washington,19034,O00000000001,P00000000001,Location Global,Test,,,100.0000,0.0000,1000.0000,3/21/2019 12:00:00 AM,0.0000,0.0000,0.0000,,False,True,True,True,,,2,3/27/2019 6:33:14 PM,
